@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  gateway:
+    image: docker/mcp-gateway
+    command:
+      - --servers=duckduckgo
+      - --servers=github-official
+      - --secrets=mcp:/run/secrets/mcp_secret
+      - --transport=streamable     # or: --transport=sse
+      - --port=8811
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./mcp:/mcp
+    ports:
+      - "8811:8811"
+    secrets:
+      - mcp_secret
+    restart: unless-stopped
+
+secrets:
+  mcp_secret:
+    file: .env
+  
