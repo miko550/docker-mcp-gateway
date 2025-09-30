@@ -1,4 +1,0 @@
-yamlregistry:
-  # ... existing servers ...
-  dice:
-    ref: ""
