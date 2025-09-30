@@ -4,13 +4,11 @@ services:
   gateway:
     image: docker/mcp-gateway:latest
     command:
-      - --servers=duckduckgo
+      - --servers=duckduckgo,dice
+      - --catalog=/mcp/catalogs/official-catalog.yml
+      - --catalog=/mcp/catalogs/custom.yml
       - --transport=streamable        # or: --transport=sse
       - --port=8811
-      - --catalog=/mcp/catalogs/custom.yaml
-      - --config=/mcp/config.yml   
-      - --registry=/mcp/registry.yml  
-      - --tools-config=/mcp/tools.yml
       - --secrets=mcp:/run/secrets/mcp_secret
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
