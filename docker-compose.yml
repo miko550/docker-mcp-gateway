@@ -2,13 +2,17 @@ version: "3.9"
 
 services:
   gateway:
-    image: docker/mcp-gateway
+    image: docker/mcp-gateway:latest
     command:
       - --servers=duckduckgo
       - --servers=github-official
-      - --secrets=mcp:/run/secrets/mcp_secret
-      - --transport=streamable     # or: --transport=sse
+      - --transport=streamable        # or: --transport=sse
       - --port=8811
+      - --catalog=/mcp/catalogs/custom.yaml
+      - --config=/mcp/config.yml   
+      - --registry=/mcp/registry.yml  
+      - --tools-config=/mcp/tools.yml
+      - --secrets=mcp:/run/secrets/mcp_secret
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./mcp:/mcp
@@ -20,5 +24,4 @@ services:
 
 secrets:
   mcp_secret:
-    file: .env
-  
+    file: .env   # this file's CONTENT becomes the secret
