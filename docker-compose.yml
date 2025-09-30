@@ -5,7 +5,6 @@ services:
     image: docker/mcp-gateway:latest
     command:
       - --servers=duckduckgo
-      - --servers=github-official
       - --transport=streamable        # or: --transport=sse
       - --port=8811
       - --catalog=/mcp/catalogs/custom.yaml
