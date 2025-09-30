@@ -1,0 +1,35 @@
+yamlversion: 2
+name: custom
+displayName: Custom MCP Servers
+registry:
+  dice:
+    description: "Comprehensive dice rolling for tabletop games and randomization"
+    title: "Dice Roller"
+    type: server
+    dateAdded: "2025-01-24T00:00:00Z"
+    image: dice-mcp-server:latest
+    ref: ""
+    readme: ""
+    toolsUrl: ""
+    source: ""
+    upstream: ""
+    icon: ""
+    tools:
+      - name: flip_coin
+      - name: roll_dice
+      - name: roll_custom
+      - name: roll_stats
+      - name: roll_advantage
+      - name: roll_disadvantage
+      - name: roll_check
+      - name: roll_initiative
+    metadata:
+      category: productivity
+      tags:
+        - gaming
+        - dice
+        - randomization
+        - dnd
+        - tabletop
+      license: MIT
+      owner: local
