@@ -14,7 +14,7 @@ docker compose up -d
 {
   "mcpServers": {
     "docker-mcp-gateway": {
-      "type": "streamable",          // or "sse" if you set --transport=sse
+      "type": "streamable",
       "url": "http://<SERVER IP>:8811/mcp"
     }
   }
